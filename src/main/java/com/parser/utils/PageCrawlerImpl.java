@@ -1,5 +1,6 @@
 package com.parser.utils;
 
+import com.parser.enums.RequestPrefixesEnum;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,7 +20,7 @@ public class PageCrawlerImpl implements PageCrawler {
     @Override
     public List<String> getAllLinksByRequest(String searchRequest) {
 
-        final String SEARCH_REQUEST_PREFIX = "https://www.aboutyou.de";
+        final String SEARCH_REQUEST_PREFIX = RequestPrefixesEnum.SEARCH_REQUEST_PREFIX.getRequestPrefix();
         List<String> linksFromAllNextPagesList = new ArrayList<>();
         String nextPageRequest = searchRequest;
         Document pageWithOffersJsoupDoc;
@@ -49,7 +50,7 @@ public class PageCrawlerImpl implements PageCrawler {
 
         if (pageWithOffersJsoupDoc == null) return null;
 
-        final String SEARCH_REQUEST_PREFIX = "https://www.aboutyou.de";
+        final String SEARCH_REQUEST_PREFIX = RequestPrefixesEnum.SEARCH_REQUEST_PREFIX.getRequestPrefix();
         final int INITIAL_QUANTITY_OF_OFFER_LINKS_PER_PAGE = 100;
         List<String> OffersLinksOnPageList = new ArrayList<>(INITIAL_QUANTITY_OF_OFFER_LINKS_PER_PAGE);
 
