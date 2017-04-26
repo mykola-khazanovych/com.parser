@@ -1,4 +1,7 @@
+package com.parser.utils;
+
 import com.google.inject.Inject;
+import com.parser.entities.Offer;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -32,8 +35,8 @@ public class OffersManagerImpl implements OffersManager {
 
         return offersList;
     }
-@Override
-    public Offer getOfferAttributes(String offerLink) {
+
+    private Offer getOfferAttributes(String offerLink) {
 
         Offer offer = new Offer();
         Document offerPage = pageCrawler.getPageWithOffersByRequest(offerLink);
@@ -43,7 +46,6 @@ public class OffersManagerImpl implements OffersManager {
         offer.setName(offerAttributes.tagName("title").text());
 
         offerAttributes = offerPage.getElementsByTag("meta");
-        String price = null;
         double priceD = 0;
         //this attribute extraction module ought to be more elegant :)
         for (Element e : offerAttributes) {
@@ -57,7 +59,7 @@ public class OffersManagerImpl implements OffersManager {
                 continue;
             }
             if (e.toString().contains("og:price:amount")) {
-                price = e.toString().split("\"")[3];
+                String price = e.toString().split("\"")[3];
                 offer.setPrice(price);
                 priceD = Double.valueOf(price);//we need price value to calculate if SHIPPING could be FREE
                 continue;

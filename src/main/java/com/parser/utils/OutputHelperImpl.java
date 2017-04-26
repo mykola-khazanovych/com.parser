@@ -1,3 +1,7 @@
+package com.parser.utils;
+
+import com.parser.entities.Offer;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -35,14 +39,13 @@ public class OutputHelperImpl implements OutputHelper {
         System.out.println("---------------------------------------------------------");
 
         amountOfExtractedProducts = offersList.size();
-
-        this.printStatistics();
     }
 
-    private void printStatistics() {
+    @Override
+    public void printStatistics(Long startTimeMillis) {
 
         System.out.println("Amount of triggered HTTP-requests: " + PageCrawlerImpl.requestsCounter);
-        System.out.println("Runtime: " + (System.currentTimeMillis() - Main.startTimeMillis) + " millis");
+        System.out.println("Runtime: " + (System.currentTimeMillis() - startTimeMillis) + " millis");
 
         Long memoryUsed = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         System.out.println("Memory used: " + memoryUsed + " bytes");

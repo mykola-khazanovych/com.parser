@@ -1,3 +1,7 @@
+package com.parser.utils;
+
+import com.parser.entities.Offer;
+
 import java.util.List;
 
 /**
@@ -6,4 +10,5 @@ import java.util.List;
  */
 public interface OutputHelper {
     void printOffersToFile(String keyword, List<Offer> offersList);
+    void printStatistics(Long startTimeMillis);
 }

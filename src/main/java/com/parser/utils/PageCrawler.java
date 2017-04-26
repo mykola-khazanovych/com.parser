@@ -1,3 +1,5 @@
+package com.parser.utils;
+
 import org.jsoup.nodes.Document;
 
 import java.util.List;

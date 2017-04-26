@@ -56,7 +56,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>Main</mainClass>
+                                    <mainClass>com.parser.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
