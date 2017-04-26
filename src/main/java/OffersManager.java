@@ -8,5 +8,4 @@ import java.util.List;
  */
 public interface OffersManager {
     List<Offer> getOffersList(String keyword);
-    public Offer getOfferAttributes(String offerLink);//TODO remove it and make method private
 }

@@ -32,8 +32,8 @@ public class OffersManagerImpl implements OffersManager {
 
         return offersList;
     }
-@Override
-    public Offer getOfferAttributes(String offerLink) {
+
+    private Offer getOfferAttributes(String offerLink) {
 
         Offer offer = new Offer();
         Document offerPage = pageCrawler.getPageWithOffersByRequest(offerLink);
