@@ -1,4 +1,8 @@
+package com.parser;
+
 import com.google.inject.AbstractModule;
+import com.parser.utils.*;
+
 
 /**
  * @author Mykola Khazanovych
@@ -7,6 +11,7 @@ import com.google.inject.AbstractModule;
 public class DependencyInjectionModule extends AbstractModule {
     @Override
     protected void configure() {
+
         bind(OffersLinksListBuilder.class).to(OffersLinksListBuilderImpl.class);
         bind(OffersManager.class).to(OffersManagerImpl.class);
         bind(OutputHelper.class).to(OutputHelperImpl.class);

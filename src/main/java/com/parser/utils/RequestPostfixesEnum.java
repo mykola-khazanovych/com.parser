@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package com.parser.utils;
 
 /**
  * @author Mykola Khazanovych

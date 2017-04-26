@@ -1,5 +1,10 @@
-import com.google.inject.Injector;
+package com.parser;
 
+import com.google.inject.Injector;
+import com.parser.dependency.InjectorBuilder;
+import com.parser.utils.Offer;
+import com.parser.utils.OffersManager;
+import com.parser.utils.OutputHelper;
 import java.util.List;
 
 /**
@@ -8,11 +13,10 @@ import java.util.List;
  */
 
 public class Main {
-    static long startTimeMillis;
 
     public static void main(String[] args) {
 
-        startTimeMillis = System.currentTimeMillis();
+        long startTimeMillis = System.currentTimeMillis();
 
         String keyword = args[0];
         System.out.println("Searching site for '" + keyword + "' please wait (it takes apr. 7 min for 2000 products scan)...");
@@ -24,5 +28,6 @@ public class Main {
         List<Offer> offersList = offersManager.getOffersList(keyword);
 
         helper.printOffersToFile(keyword, offersList);
+        helper.printStatistics(startTimeMillis);
     }
 }

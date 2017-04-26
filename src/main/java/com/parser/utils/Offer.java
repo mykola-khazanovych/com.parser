@@ -1,3 +1,5 @@
+package com.parser.utils;
+
 import lombok.*;
 
 /**
@@ -22,7 +24,7 @@ public class Offer {
 
     @Override
     public String toString() {
-        return "Offer{" + "\n" +
+        return "com.parser.utils.Offer{" + "\n" +
                 "name='" + name + '\'' + "\n" +
                 "brand='" + brand + '\'' + "\n" +
                 "color='" + color + '\'' + "\n" +
