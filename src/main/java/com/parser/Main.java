@@ -2,7 +2,7 @@ package com.parser;
 
 import com.google.inject.Injector;
 import com.parser.dependency.InjectorBuilder;
-import com.parser.utils.Offer;
+import com.parser.entities.Offer;
 import com.parser.utils.OffersManager;
 import com.parser.utils.OutputHelper;
 import java.util.List;

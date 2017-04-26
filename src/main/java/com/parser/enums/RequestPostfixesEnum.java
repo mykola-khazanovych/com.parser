@@ -1,4 +1,4 @@
-package com.parser.utils;
+package com.parser.enums;
 
 /**
  * @author Mykola Khazanovych

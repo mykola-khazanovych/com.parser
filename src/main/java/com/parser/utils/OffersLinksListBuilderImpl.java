@@ -1,6 +1,8 @@
 package com.parser.utils;
 
 import com.google.inject.Inject;
+import com.parser.enums.RequestPostfixesEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 

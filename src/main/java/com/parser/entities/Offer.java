@@ -1,4 +1,4 @@
-package com.parser.utils;
+package com.parser.entities;
 
 import lombok.*;
 
@@ -24,7 +24,7 @@ public class Offer {
 
     @Override
     public String toString() {
-        return "com.parser.utils.Offer{" + "\n" +
+        return "com.parser.entities.Offer{" + "\n" +
                 "name='" + name + '\'' + "\n" +
                 "brand='" + brand + '\'' + "\n" +
                 "color='" + color + '\'' + "\n" +

@@ -1,5 +1,7 @@
 package com.parser.utils;
 
+import com.parser.entities.Offer;
+
 import java.util.List;
 
 /**
