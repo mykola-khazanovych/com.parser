@@ -2,7 +2,6 @@ package com.parser.dependency;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.parser.DependencyInjectionModule;
 
 /**
  * @author Mykola Khazanovych
