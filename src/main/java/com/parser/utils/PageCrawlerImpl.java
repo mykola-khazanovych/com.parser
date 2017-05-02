@@ -1,5 +1,6 @@
 package com.parser.utils;
 
+import com.parser.enums.RequestPrefixesEnum;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,17 +19,17 @@ public class PageCrawlerImpl implements PageCrawler {
 
     @Override
     public List<String> getAllLinksByRequest(String searchRequest) {
-
-        final String SEARCH_REQUEST_PREFIX = "https://www.aboutyou.de";
+//TODO change name to something like SITE_URL_PREFIX
+        final String SITE_URL_PREFIX = RequestPrefixesEnum.SITE_URL_PREFIX.getRequestPrefix();
         List<String> linksFromAllNextPagesList = new ArrayList<>();
         String nextPageRequest = searchRequest;
         Document pageWithOffersJsoupDoc;
-        String nextPageUrl = null;
+        String nextPageUrl;
         do {
             pageWithOffersJsoupDoc = this.getPageWithOffersByRequest(nextPageRequest);
             linksFromAllNextPagesList.addAll(this.getAllOffersLinksFromPage(pageWithOffersJsoupDoc));
             nextPageUrl = this.getNextPageRequest(pageWithOffersJsoupDoc);
-            nextPageRequest = SEARCH_REQUEST_PREFIX + nextPageUrl;
+            nextPageRequest = SITE_URL_PREFIX + nextPageUrl;
         } while (nextPageUrl != null);
         return linksFromAllNextPagesList;
     }
@@ -49,7 +50,7 @@ public class PageCrawlerImpl implements PageCrawler {
 
         if (pageWithOffersJsoupDoc == null) return null;
 
-        final String SEARCH_REQUEST_PREFIX = "https://www.aboutyou.de";
+        final String SEARCH_REQUEST_PREFIX = RequestPrefixesEnum.SITE_URL_PREFIX.getRequestPrefix();
         final int INITIAL_QUANTITY_OF_OFFER_LINKS_PER_PAGE = 100;
         List<String> OffersLinksOnPageList = new ArrayList<>(INITIAL_QUANTITY_OF_OFFER_LINKS_PER_PAGE);
 
