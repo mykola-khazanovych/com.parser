@@ -7,7 +7,7 @@ package com.parser.enums;
  *         com.parser.enums;
  */
 public enum RequestPrefixesEnum {
-    SEARCH_REQUEST_PREFIX("https://www.aboutyou.de");
+    SITE_URL_PREFIX("https://www.aboutyou.de");
 
     String url_fragment;
 
